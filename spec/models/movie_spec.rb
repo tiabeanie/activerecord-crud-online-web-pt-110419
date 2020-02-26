@@ -85,15 +85,6 @@ describe 'Movie' do
         Movie.last.update_attribute(:id, 999)
       end
 
-      it 'can get the first item in the database' do
-        movie = can_get_the_first_item_in_the_database
-        expect(movie.title).to eq("Movie_0")
-      end
-
-      it 'can get the last item in the databse' do
-        movie = can_get_the_last_item_in_the_database
-        expect(movie.title).to eq("Movie_4")
-      end
 
       it 'can get size of the database' do
         movies_size = can_get_size_of_the_database
@@ -107,10 +98,6 @@ describe 'Movie' do
       it 'can retrieve from the database using different attributes' do
         movie = Movie.create(title: "Title", release_date: 2000, director: "Me")
         expect(can_find_by_multiple_attributes).to eq(movie)
-      end
-
-      it 'can use a where clause and be sorted' do
-        expect(can_find_using_where_clause_and_be_sorted.map{|m| m.title}).to eq(["Movie_4", "Movie_3"])
       end
     end
 
