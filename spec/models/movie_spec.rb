@@ -91,10 +91,6 @@ describe 'Movie' do
         expect(movies_size).to eq(5)
       end
 
-      it 'can retrive the first item from the database by id' do
-        expect(can_find_the_first_item_from_the_database_using_id.title).to eq("Movie_0")
-      end
-
       it 'can retrieve from the database using different attributes' do
         movie = Movie.create(title: "Title", release_date: 2000, director: "Me")
         expect(can_find_by_multiple_attributes).to eq(movie)
